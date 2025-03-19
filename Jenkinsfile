@@ -1,10 +1,16 @@
 def registry= "940090592876.dkr.ecr.ca-central-1.amazonaws.com"
 def tag = ""
-def ms = ""
+def ms = "load-generator"
 def region = "ca-central-1"
 
 pipeline{
     agent any
+    environment {
+        AWS_REGION = region
+        AWS_ACCOUNT_ID = "940090592876"
+        ECR_REPO = "940090592876.dkr.ecr.ca-central-1.amazonaws.com/load-generator"
+    }
+    
     stages{
         stage("init"){
             steps{
