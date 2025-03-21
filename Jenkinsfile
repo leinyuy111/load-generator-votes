@@ -80,6 +80,6 @@ def getTag(){
     tag = "${version}-develop"
   } else {
     tag = "${version}-${env.BRANCH_NAME}"
-  }
-return tag 
+ }
+return tag
 }
